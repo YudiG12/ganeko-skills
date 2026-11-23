@@ -9,7 +9,7 @@ Bundled workflows (one plugin that runs a whole process) are hard to adapt: peop
 
 ## Decision
 - **One job per skill.** `lesson` writes a lesson; `video-lesson` turns a lesson into a video.
-- **Skills meet at files, not calls.** `video-lesson` reads `lesson.html`; nothing else is shared.
+- **Skills meet at files, not calls.** `video-lesson` films any source; a `lesson.html` is one input among others, never a requirement.
 - **Every skill is user-invoked** (`disable-model-invocation: true`): zero context load, and the expensive ones never fire on their own.
 
 ## Alternatives considered

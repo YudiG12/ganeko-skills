@@ -1,19 +1,19 @@
 ---
 name: video-lesson
-description: Turn a lesson.html into a narrated, animated ~4 min video.
+description: Explain any concept or source as a narrated, animated ~4 min video.
 disable-model-invocation: true
-argument-hint: "<lesson-slug> [--tts kokoro] [--voice pm_alex]"
+argument-hint: "<concept, link, file or lesson slug> [--tts kokoro] [--voice pm_alex]"
 ---
 
-A **video lesson** is one continuous animated scene, synced word by word to one narrator, that explains the concept of an existing `./lessons/<slug>/lesson.html`. Everything is written to `./lessons/<slug>/`. Scripts live in this skill's folder (`scripts/`, `tts/`); first run needs `scripts/setup.sh`.
+A **video lesson** is one continuous animated scene, synced word by word to one narrator, that explains one concept. The **source** can be anything: a topic, a link, a PDF, code, notes, or a `lesson.html` from the `lesson` skill. Everything is written to `./lessons/<slug>/` (an existing lesson keeps its folder). Scripts live in this skill's folder (`scripts/`, `tts/`); first run needs `scripts/setup.sh`.
 
 ## Steps
 
-1. **Script** → `script.json`. Read `lesson.html` as source material and write a new text **for the ear**:
+1. **Script** → `script.json`. Read the source. A bare topic, or a source too thin to explain from, means research first: 1–3 primary sources (official docs, the paper, the creator's post), every claim traced to one. One concept per video; if the source holds several, name the one you are filming. Then write a new text **for the ear**:
    ```json
    {"title": "...", "sub": "...", "lang": "pt", "lines": [{"id": "a1", "text": "One short sentence.", "concept": true}]}
    ```
-   - Same ladder as the lesson (real scenario → what breaks → concrete example step by step → why → only then the name → the fix, saying which part of the problem each fix removes), retold as speech.
+   - Climb the ladder (real scenario → what breaks → concrete example step by step → why → only then the name → the fix, saying which part of the problem each fix removes), retold as speech.
    - One sentence per line, short (fragments are fine: "And it obeys."). `"concept": true` on the line that closes a concept adds a 1.2 s pause after it. Target rhythm ~154 words/min with pauses: a dense, breathless script sounds rushed even read slowly.
    - Compare with `example/durable-objects/script.json`, the approved bar.
    - Depth, not a timer: every idea gets one concrete example with names and values. ~3,500 characters ≈ 4 min; measure before generating audio.
@@ -28,4 +28,4 @@ A **video lesson** is one continuous animated scene, synced word by word to one 
 
 5. **Render** → `scripts/render.sh lessons/<slug>` → `video.mp4` + `poster.jpg`.
 
-6. **Present** → `video.html`, a **theater** page: the video large on the left with its own player, the lesson's essentials on the right. Write `page.json` (format at the top of `scripts/page.py`: summary, 4–6 chapters and 4–8 concepts each pinned to an exact narration phrase, the lesson's Check questions), then run `python3 scripts/page.py lessons/<slug>`. It builds `video.html` from `template/video.html` and links it from `lesson.html` under the map. Open `video.html`. Done when it plays with chapters and concept stars in place; reply with what the video covers, in a few lines.
+6. **Present** → `video.html`, a **theater** page: the video large on the left with its own player, the essentials on the right. Write `page.json` (format at the top of `scripts/page.py`: summary, 4–6 chapters and 4–8 concepts each pinned to an exact narration phrase, 3 questions that make the viewer apply the concept to a new case), then run `python3 scripts/page.py lessons/<slug>`. It builds `video.html` from `template/video.html`, and links it from `lesson.html` when one exists. Open `video.html`. Done when it plays with chapters and concept stars in place; reply with what the video covers, in a few lines.

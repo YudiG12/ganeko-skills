@@ -30,7 +30,7 @@ Clona https://github.com/YudiG12/ganeko-skills e instala as skills pra mim, segu
 ```txt
 /lesson o que é um eval
 /video-lesson o-que-e-um-eval
-/video-lesson o-que-e-um-eval --tts elevenlabs --voice <voice-id>
+/video-lesson https://hamel.dev/blog/posts/evals/ --tts elevenlabs --voice <voice-id>
 ```
 
 Tudo vai pra `./lessons/<slug>/`: `lesson.html`, depois `video.mp4` e `video.html`.
@@ -38,7 +38,7 @@ Tudo vai pra `./lessons/<slug>/`: `lesson.html`, depois `video.mp4` e `video.htm
 | Skill | O que gera |
 |---|---|
 | [`lesson`](skills/beta/lesson) | Uma aula em HTML: mapa no topo, do problema real até o nome técnico, termos, perguntas e fontes primárias. |
-| [`video-lesson`](skills/beta/video-lesson) | Um vídeo narrado e animado de ~4 min dessa aula, mais uma página de teatro com capítulos e marcadores de conceito. |
+| [`video-lesson`](skills/beta/video-lesson) | Um vídeo narrado e animado de ~4 min de qualquer conceito ou origem (um tema, um link, um PDF ou um `lesson.html`), mais uma página de teatro com capítulos e marcadores de conceito. |
 
 Cada skill traz um `STYLE.md` com o meu estilo como padrão. Edite e o resultado fica com a sua cara.
 
@@ -46,7 +46,7 @@ Cada skill traz um `STYLE.md` com o meu estilo como padrão. Edite e o resultado
 
 | Tema | Como | Decisão |
 |---|---|---|
-| Um trabalho por skill | `lesson` escreve, `video-lesson` filma; só compartilham o `lesson.html` | [ADR 001](docs/adr/001-atomic-skills.md) |
+| Um trabalho por skill | `lesson` escreve, `video-lesson` filma qualquer origem; o `lesson.html` é uma entrada possível | [ADR 001](docs/adr/001-atomic-skills.md) |
 | Maturidade | Tudo começa em `skills/beta/` | [ADR 002](docs/adr/002-beta-folder.md) |
 | Voz | Kokoro local por padrão; qualquer narrador é um `tts/<nome>.py` | [ADR 003](docs/adr/003-open-source-by-default.md) |
 | Sincronia | Tempo de cada palavra pelo faster-whisper, então a animação segue qualquer voz | [ADR 003](docs/adr/003-open-source-by-default.md) |
