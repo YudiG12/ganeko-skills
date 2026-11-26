@@ -42,6 +42,18 @@ Everything lands in `./lessons/<slug>/`: `lesson.html`, then `video.mp4` and `vi
 
 Each skill ships a `STYLE.md` with my style as the default. Edit it and the output looks like yours.
 
+## Example
+
+Generated from `/lesson what is an eval` (in Portuguese), then `/video-lesson`. No manual edits.
+
+<table><tr>
+<td width="50%"><img src="docs/assets/example-lesson.png" alt="lesson.html: a map of the eval loop up top, the video embedded, then the scenario of a support-ticket classifier"></td>
+<td width="50%"><img src="docs/assets/example-video.gif" alt="video-lesson: a 50-case dataset runs through the prompt and a grader, scoring 45/50"></td>
+</tr><tr>
+<td align="center"><code>lesson.html</code></td>
+<td align="center"><code>video.mp4</code> (14 s of 4 min)</td>
+</tr></table>
+
 ## Architecture
 
 | Concern | How | Decision |
