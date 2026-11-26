@@ -7,3 +7,4 @@
 - `--tts` narrator flag with local Kokoro as default, faster-whisper alignment. [ADR 003](docs/adr/003-open-source-by-default.md)
 - Theater page (`video.html`) built by `scripts/page.py`.
 - `scripts/install.sh`, README images, AGENTS.md.
+- `lesson --dark`: optional dark theme; light stays the default.

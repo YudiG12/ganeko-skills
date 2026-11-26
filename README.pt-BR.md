@@ -29,6 +29,7 @@ Clona https://github.com/YudiG12/ganeko-skills e instala as skills pra mim, segu
 
 ```txt
 /lesson o que é um eval
+/lesson o que é um eval --dark
 /video-lesson o-que-e-um-eval
 /video-lesson https://hamel.dev/blog/posts/evals/ --tts elevenlabs --voice <voice-id>
 ```

@@ -2,7 +2,7 @@
 name: lesson
 description: Write one visual HTML lesson that explains one technical concept.
 disable-model-invocation: true
-argument-hint: "<concept> [link, file or pasted material]"
+argument-hint: "<concept> [link, file or pasted material] [--dark]"
 ---
 
 A **lesson** is one self-contained HTML file that teaches one concept, starting from the problem that forces the concept to exist. The reader finishes it in one sitting and can explain the concept afterwards.
@@ -13,7 +13,7 @@ A **lesson** is one self-contained HTML file that teaches one concept, starting 
 
 2. **Research.** Read the material the user passed, then find 1–3 **primary sources** (official docs, the paper, the creator's own post). Never trust parametric knowledge: every claim in the lesson traces to a source you read this session. Done when you hold the sources and the one concrete example the lesson will run on.
 
-3. **Write** `./lessons/<slug>/lesson.html`, in the language of the request (or `--lang`), styled by [`STYLE.md`](STYLE.md).
+3. **Write** `./lessons/<slug>/lesson.html`, in the language of the request (or `--lang`), styled by [`STYLE.md`](STYLE.md). Light by default; `--dark` uses its dark theme.
 
    Open with the **map**: one diagram, right under the title, showing the world the concept lives in (a system, a process, a team) with the concept highlighted as the piece it adds. 4–7 elements, labels only, readable at a glance. The map orients; the ladder explains.
 
