@@ -42,6 +42,18 @@ Tudo vai pra `./lessons/<slug>/`: `lesson.html`, depois `video.mp4` e `video.htm
 
 Cada skill traz um `STYLE.md` com o meu estilo como padrão. Edite e o resultado fica com a sua cara.
 
+## Exemplo
+
+Gerado com `/lesson o que é um eval` e depois `/video-lesson`. Sem edição manual.
+
+<table><tr>
+<td width="50%"><img src="docs/assets/example-lesson.png" alt="lesson.html: a map of the eval loop up top, the video embedded, then the scenario of a support-ticket classifier"></td>
+<td width="50%"><img src="docs/assets/example-video.gif" alt="video-lesson: a 50-case dataset runs through the prompt and a grader, scoring 45/50"></td>
+</tr><tr>
+<td align="center"><code>lesson.html</code></td>
+<td align="center"><code>video.mp4</code> (14 s de 4 min)</td>
+</tr></table>
+
 ## Arquitetura
 
 | Tema | Como | Decisão |
